@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+
+    <style></style>
+  </head>
+
+  <body>
+    <div class="quotes"></div>
+    <button class="startQ">startQuote</button>
+  </body>
+  <script>
+    const quotes = [
+      {
+        text: "The only way to do great work is to love what you do.",
+        author: "~ Steve Jobs ~",
+      },
+
+      {
+        text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        author: "~ Winston Churchill ~",
+      },
+
+      {
+        text: "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+        author: "~ Martin Luther King Jr. ~",
+      },
+
+      {
+        text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        author: " ~ Nelson Mandela ~ ",
+      },
+
+      {
+        text: "The best preparation for tomorrow is doing your best today.",
+        author: " ~ H. Jackson Brown Jr. ~ ",
+      },
+
+      {
+        text: "The only limit to our realization of tomorrow will be our doubts of today.",
+        author: " ~ - Franklin D. Roosevelt ~ ",
+      },
+
+      {
+        text: " Believe you can and you're halfway there. ",
+        author: " Theodore Roosevelt ",
+      },
+
+      {
+        text: "The only person you should try to be better than is the person you were yesterday.",
+        author: " ~ Matty Mullins ~ ",
+      },
+
+      {
+        text: "Don't watch the clock; do what it does. Keep going.",
+        author: " ~  Sam Levenson ~ ",
+      },
+
+      {
+        text: "The future belongs to those who believe in the beauty of their dreams.",
+        author: " ~ Eleanor Roosevelt ~ ",
+      },
+    ];
+
+    let button = "startQuote";
+    let quotesEl = document.querySelector(".quotes");
+    let generateButton = document.querySelector(".startQ");
+    console.log(generateButton);
+
+    function randomQuotes() {
+      let index = Math.floor(Math.random() * quotes.length - 1);
+      quotesEl.innerHTML = `<p>${quotes[index].text} </p>  <p> ${quotes[index].author}</p> `;
+    }
+
+    setInterval(randomQuotes, 5000);
+
+    generateButton.addEventListener("click", randomQuotes);
+    generateButton.style.display = "block"
+  </script>
+</html>
